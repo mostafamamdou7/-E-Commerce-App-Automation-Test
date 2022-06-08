@@ -28,14 +28,14 @@ public class SD07_followUs {
     @When("Click on facebook icon")
     public void clickFacebook() throws InterruptedException {
         P03.facebook.click();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         keys.sendKeys(Keys.chord(Keys.LEFT_CONTROL, Keys.TAB));
     }
 
     @And("Click on twitter icon")
     public void clickTwitter() throws InterruptedException {
         P03.twitter.click();
-        Thread.sleep(3000);
+        Thread.sleep(4000);
         keys.sendKeys(Keys.chord(Keys.LEFT_CONTROL, Keys.TAB));
     }
 
@@ -55,7 +55,7 @@ public class SD07_followUs {
 
     @Then("User could open facebook page")
     public void facebookAssertion(){
-        urlAssertion.assertEquals(P03.facebook.getAttribute("href"),"http://www.facebook.com/nopCommerce");
+        urlAssertion.assertTrue(P03.facebook.getAttribute("href").contains("www.facebook.com/nopCommerce"));
         urlAssertion.assertAll();
     }
 

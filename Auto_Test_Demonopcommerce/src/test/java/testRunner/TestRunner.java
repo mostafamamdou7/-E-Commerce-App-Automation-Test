@@ -11,7 +11,7 @@ import io.cucumber.testng.CucumberOptions;
 @CucumberOptions(
         features = "src\\main\\resources\\features",
         glue = {"stepDefinition"},
-        plugin = {"pretty", "html:target/cucumber"},
+        plugin = {"pretty", "html:generated_report/index.html"},
         tags = "@SmokeTesting"
 
 )

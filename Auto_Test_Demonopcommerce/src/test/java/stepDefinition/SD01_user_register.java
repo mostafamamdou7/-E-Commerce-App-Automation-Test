@@ -61,8 +61,9 @@ public class SD01_user_register {
     }
 
     @Then("User could register successfully")
-    public void RegistrationAssertion(){
+    public void RegistrationAssertion() throws InterruptedException {
         SoftAssert registrationAssertion = new SoftAssert();
+        Thread.sleep(3000);
         registrationAssertion.assertTrue(P01.registrationComplete.getText().contains("Your registration completed"));
         registrationAssertion.assertEquals(P01.registrationComplete.getCssValue("color"), "rgba(76, 177, 124, 1)");
         registrationAssertion.assertAll();
